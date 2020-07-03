@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using StoreAPI.Models;
 
 namespace StoreAPI
 {
@@ -26,6 +27,7 @@ namespace StoreAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<StoreDBContext>(opt => Configuration.GetConnectionString("StoreDBConnexionString"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
