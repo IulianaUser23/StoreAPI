@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,7 +28,7 @@ namespace StoreAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<StoreDBContext>(opt => Configuration.GetConnectionString("StoreDBConnexionString"));
+            services.AddDbContext<StoreDBContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("StoreDBConnexionString")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
