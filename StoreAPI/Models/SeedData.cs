@@ -23,7 +23,7 @@ namespace StoreAPI.Models
                 context.Products.AddRange(
                     new Product
                     {
-                        Name = "The name of the firts product",
+                        Name = "The name of the first product",
                         
                     },
 
