@@ -1,6 +1,7 @@
 using System;
 
-namespace StoreAPI
+namespace StoreAPI.Models
+
 {
     public class WeatherForecast
     {
